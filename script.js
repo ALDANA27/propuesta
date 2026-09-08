@@ -4,7 +4,7 @@ const letterWindow = document.getElementById('letter-window');
 const question = document.getElementById('question');
 const bgMusic = document.getElementById('bg-music');
 
-// Lista de respuestas graciosas que cambiarán en el botón NO
+// Frases divertidas para el botón NO
 const noPhrases = [
     "¿Segura? 🥺",
     "¡Pénsalo bien! 💭",
@@ -17,21 +17,26 @@ const noPhrases = [
 
 let phraseIndex = 0;
 
-// Función para mover el botón NO y cambiar el texto
+// Función para intentar reproducir la música sin bloquear el script si falta el archivo
+function tryPlayMusic() {
+    if (bgMusic) {
+        bgMusic.play().catch(error => {
+            console.log("Audio no disponible o esperando interacción.");
+        });
+    }
+}
+
+// Mover el botón NO y cambiar su texto
 function moveNoButton() {
     const randomX = Math.floor(Math.random() * 200) - 100;
     const randomY = Math.floor(Math.random() * 200) - 100;
     
     noBtn.style.transform = translate(${randomX}px, ${randomY}px);
     
-    // Cambia la frase del botón No
     noBtn.textContent = noPhrases[phraseIndex];
     phraseIndex = (phraseIndex + 1) % noPhrases.length;
 
-    // Intenta reproducir la música si no ha iniciado
-    if (bgMusic.paused) {
-        bgMusic.play().catch(() => {});
-    }
+    tryPlayMusic();
 }
 
 noBtn.addEventListener('mouseover', moveNoButton);
@@ -40,20 +45,23 @@ noBtn.addEventListener('touchstart', (e) => {
     moveNoButton();
 });
 
-// Acción al presionar "SÍ"
+// Acción principal al dar clic en ¡Sí!
 yesBtn.addEventListener('click', () => {
     letterWindow.style.display = 'block';
     question.textContent = "¡Dijiste que sí! 💖✨";
     noBtn.style.display = 'none';
 
-    // Reproduce la música
-    bgMusic.play().catch(() => {});
+    tryPlayMusic();
 
-    // Lluvia de corazones (Confeti)
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff4d6d', '#ff758f', '#ffb3c1', '#ffffff']
-    });
+    // Efecto de confeti
+    if (typeof confetti === 'function') {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#ff4d6d', '#ff758f', '#ffb3c1', '#ffffff']
+        });
+    }
 });
+
+  
