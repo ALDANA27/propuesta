@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta Especial ❤️</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Librería para el efecto de confeti de corazones -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <!-- Contenedor principal -->
     <div class="card-container">
         <div class="heart-icon">💖</div>
-        
         <h1 id="question">¿Quieres ser mi novia, Dharma? ❤️</h1>
         
         <div class="buttons">
@@ -22,28 +19,96 @@
             </div>
         </div>
 
-        <!-- Ventana que aparece al presionar SÍ -->
         <div id="letter-window" class="letter-window">
-            <div class="letter-content">
-                <h2>¡eshoo chupuzunu no te resistes a mi! 🥰✨</h2>
+            
+            <!-- PÁGINA 1 -->
+            <div class="page active" id="page-1">
+                <h2>¡Eshoo chupuzunu no te resistes a mí! 🥳✨</h2>
                 <p class="letter-text">
-                    Gracias por estar en mi vida y por hacerme tan feliz todos los días. 
-                    te amo mucho mi amor como no tienes idea y aunque todos los dias no son
-                    buenos prometo amarte siempre pase lo que pase❤️
+                    Gracias por estar en mi vida y por hacerme tan feliz todos los días. Te amo mucho mi amor como no tienes idea y aunque todos los días no son buenos prometo amarte siempre pase lo que pase ❤️
                 </p>
-
-                <!-- Espacio para fotos (reemplaza las URLs por tus fotos si deseas) -->
-                <div class="photo-gallery">
-                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&q=80" alt="Recuerdo 1">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="Recuerdo 2">
+                <div class="photo-container">
+                    <img src="foto1.jpg" alt="Foto 1">
                 </div>
+            </div>
+
+            <!-- PÁGINA 2 -->
+            <div class="page" id="page-2">
+                <h2>Lo que más me gusta de ti 🌸</h2>
+                <p class="letter-text">
+                    Amo tu forma de ser, tu risa, tus abrazos y la forma en la que iluminas mis días sin darte cuenta.
+                </p>
+                <div class="photo-container">
+                    <img src="foto2.jpg" alt="Foto 2">
+                </div>
+            </div>
+
+            <!-- PÁGINA 3 -->
+            <div class="page" id="page-3">
+                <h2>Nuestros mejores momentos 📸</h2>
+                <p class="letter-text">
+                    Cada recuerdo a tu lado es mi favorito. ¡Amo cada momento que compartimos juntos!
+                </p>
+                <div class="photo-container">
+                    <img src="foto3.jpg" alt="Foto 3">
+                </div>
+            </div>
+
+            <!-- PÁGINA 4 -->
+            <div class="page" id="page-4">
+                <h2>Razones por las que te amo 💕</h2>
+                <ul class="reasons-list">
+                    <li>✨ Porque a tu lado todo es mejor.</li>
+                    <li>💖 Porque me haces sonreír sin esfuerzo.</li>
+                    <li>🌸 Porque eres mi persona favorita.</li>
+                </ul>
+            </div>
+
+            <!-- PÁGINA 5 -->
+            <div class="page" id="page-5">
+                <h2>Una promesa para ti 🤝❤️</h2>
+                <p class="letter-text">
+                    Prometo cuidarte, escucharte, apoyarte en tus metas y sacarte una sonrisa siempre que lo necesites.
+                </p>
+                <div class="photo-container">
+                    <img src="foto4.jpg" alt="Foto 4">
+                </div>
+            </div>
+
+            <!-- PÁGINA 6 -->
+            <div class="page" id="page-6">
+                <h2>Lo que se viene... ✈️✨</h2>
+                <p class="letter-text">
+                    Este es solo el comienzo de muchísimos viajes, citas, risas y recuerdos inolvidables que vamos a construir juntos.
+                </p>
+                <div class="photo-container">
+                    <img src="foto5.jpg" alt="Foto 5">
+                </div>
+            </div>
+
+            <!-- PÁGINA 7 -->
+            <div class="page" id="page-7">
+                <h2>¡Gracias por decir que SÍ! 🥰💖</h2>
+                <p class="letter-text">
+                    Me haces el hombre más feliz del mundo. ¡Te amo muchísimo!
+                </p>
+                <div class="photo-container">
+                    <img src="foto6.jpg" alt="Foto 6">
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <div class="nav-buttons">
+                <button id="prev-page-btn" class="nav-btn" style="display: none;">⬅️ Anterior</button>
+                <span id="page-indicator" class="page-indicator">1 / 7</span>
+                <button id="next-page-btn" class="nav-btn">Siguiente ➡️</button>
             </div>
         </div>
     </div>
 
-    <!-- Música de fondo (Audio libre de derechos) -->
+    <!-- Música de fondo (Iris) -->
     <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="iris.mp3" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
