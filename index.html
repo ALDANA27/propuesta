@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta Especial ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Librería para el efecto de confeti de corazones -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+    <!-- Contenedor principal -->
     <div class="card-container">
         <div class="heart-icon">💖</div>
-        <h1 id="question">¿Quieres ser mi novia? ❤️</h1>
+        
+        <h1 id="question">¿Quieres ser mi novia, Dharma? ❤️</h1>
         
         <div class="buttons">
             <button id="yes-btn" class="btn">¡Sí! 💕</button>
@@ -18,13 +22,29 @@
             </div>
         </div>
 
+        <!-- Ventana que aparece al presionar SÍ -->
         <div id="letter-window" class="letter-window">
             <div class="letter-content">
-                <h2>¡SABÍA QUE DIRÍAS QUE SÍ! 🥰✨</h2>
-                <p>Me haces la persona más feliz del mundo. ¡Prometo cuidarte y quererte siempre! ❤️</p>
+                <h2>¡eshoo chupuzunu no te resistes a mi! 🥰✨</h2>
+                <p class="letter-text">
+                    Gracias por estar en mi vida y por hacerme tan feliz todos los días. 
+                    te amo mucho mi amor como no tienes idea y aunque todos los dias no son
+                    buenos prometo amarte siempre pase lo que pase❤️
+                </p>
+
+                <!-- Espacio para fotos (reemplaza las URLs por tus fotos si deseas) -->
+                <div class="photo-gallery">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&q=80" alt="Recuerdo 1">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="Recuerdo 2">
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Música de fondo (Audio libre de derechos) -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 </body>
